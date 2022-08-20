@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='imagefile',
-    version="1.0.1",
+    version="1.0.2",
     description="Utility class to easily manipulate image files.",
     long_description="",
     author='kawazome',
