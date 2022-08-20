@@ -124,7 +124,7 @@ class imagefile(anyfile):
         exif["0th"][piexif.ImageIFD.YResolution] = (height, 1)
         exif_bytes = piexif.dump(exif)
         img.save(save_path, "jpeg", exif=exif_bytes)
-        return imagefile(save_path)
+        return imagefile.new(save_path)
 
     @classmethod
     def check_ext(cls,path):
