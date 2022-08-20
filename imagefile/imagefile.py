@@ -27,6 +27,10 @@ class anyfile(object):
         self._ext = None
         self._date = None
 
+    def is_valid(self): return self._path != None
+
+    def is_invalid(self): return self._path == None
+
     def path(self): return self._path
 
     def name(self): return self._name
