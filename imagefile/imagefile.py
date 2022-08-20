@@ -11,10 +11,7 @@ import piexif
 class anyfile(object):
 
     @classmethod
-    def new(cls,path):
-        instance = cls(path)
-        if instance.path(): return instance
-        return None
+    def new(cls,path):  return cls(path).validate()
 
     def __init__(self,path):
         self._path = None
@@ -26,6 +23,10 @@ class anyfile(object):
         self._name = os.path.basename(path)
         _, self._ext = os.path.splitext(path)
         self._date = anyfile.getdate(path)
+
+    def validate(self):
+        if self.path(): return self
+        return  None
 
     def clear(self):
         self._path = None
